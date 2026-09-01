@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAVITY ADVANCED TECHNOLOGIES | جرافيتي للتقنيات المتقدمة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=DrY1HHL_qUDoXB6PAH5SgkweiU1P7CeFx38bcvXmgiK_nFDfU2NoyWFk7fcQ1W3SXm7bXWw0rc3UaVmFQJJ9aCrtD_2B11_DPIR2_JM1ts3u0lL-ATEg_AhnPB1a4Pc68GqYqRGeFT27i_DsHD7mi-g6oCLUI-bZRLnBg4MuIyocz-2z4NEn8LWGTCLZQiIR4y-Hz77ofmXXY0pZaPDSECYcarSDTe7UsH7pgmnRNkA6CiqTzURbonaZWXTaJUkIHC9l6z5aXYPUDzyPgzlQhY5WFKH9-JeFdImyJ5hyRSGNITKH336Rt1KxH5tFT5RR" charset="UTF-8"></script><style>
+  :root{
+    --bg:#0A1420;
+    --bg-panel:#0E1D2E;
+    --bg-panel-2:#122436;
+    --grid-line: rgba(79,209,232,0.07);
+    --cyan:#4FD1E8;
+    --amber:#FFB454;
+    --green:#6FE39A;
+    --text:#EAF0F6;
+    --muted:#8A9BB0;
+    --line:#1E3245;
+    --radius:10px;
+    --display: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/44px 44px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/44px 44px,
+      var(--bg);
+    color:var(--text);
+    font-family:var(--display);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--cyan);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin:0 0 14px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px rgba(79,209,232,.18);}
+  h1,h2,h3{font-family:var(--display); font-weight:700; margin:0;}
+  h2{font-size:clamp(26px,3.4vw,38px); letter-spacing:-.01em;}
+  p{color:var(--muted); margin:0;}
+  .section{padding:96px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head p{margin-top:14px; font-size:16px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,20,32,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:600; font-size:17px; text-decoration:none;}
+  .brand .chip{
+    width:30px;height:30px;border:1.5px solid var(--cyan); border-radius:6px;
+    display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:13px;
+    position:relative;
+  }
+  .brand .chip::after{content:"";position:absolute;inset:5px;border:1px dashed rgba(79,209,232,.5);border-radius:3px;}
+  .brand span.tag{color:var(--muted); font-weight:400; font-size:11px; font-family:var(--mono);}
+  nav.links{display:flex; gap:2px; align-items:center;}
+  nav.links a{
+    font-size:14px; text-decoration:none; color:var(--muted); padding:10px 14px; border-radius:6px;
+    transition:color .2s ease, background .2s ease;
+  }
+  nav.links a:hover{color:var(--text); background:var(--bg-panel-2);}
+  .navcta{
+    font-family:var(--mono); font-size:13px; color:var(--bg); background:var(--cyan);
+    padding:9px 16px; border-radius:6px; text-decoration:none; font-weight:600; white-space:nowrap;
+  }
+  .burger{display:none; flex-direction:column; gap:4px; background:none; border:0; cursor:pointer; padding:8px;}
+  .burger span{width:22px; height:2px; background:var(--text);}
+  #navMobile{display:none; flex-direction:column; padding:8px 0 18px; border-top:1px solid var(--line);}
+  #navMobile a{padding:12px 4px; text-decoration:none; color:var(--muted); font-size:15px; border-bottom:1px solid var(--line);}
+  #navMobile.open{display:flex;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 90px; position:relative; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+  .hero h1{font-size:clamp(34px,5vw,58px); line-height:1.18; letter-spacing:-.01em;}
+  .hero h1 em{font-style:normal; color:var(--cyan);}
+  .hero p.lead{font-size:18px; margin-top:20px; max-width:520px; color:var(--muted);}
+  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--amber); color:#20140a; font-weight:700; text-decoration:none;
+    padding:14px 26px; border-radius:8px; font-size:15px; box-shadow:0 0 0 rgba(255,180,84,0);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(255,180,84,.18);}
+  .btn-ghost{
+    border:1px solid var(--line); color:var(--text); text-decoration:none; padding:13px 24px;
+    border-radius:8px; font-size:15px; transition:border-color .2s ease, background .2s ease;
+  }
+  .btn-ghost:hover{border-color:var(--cyan); background:var(--bg-panel);}
+
+  .schematic{position:relative; height:420px;}
+  .schematic svg{width:100%; height:100%;}
+  .leader-label{
+    font-family:var(--mono); font-size:11.5px; fill:var(--cyan);
+  }
+  .leader-line{stroke:var(--cyan); stroke-width:1; stroke-dasharray:4 3; opacity:.75;}
+  .leader-dot{fill:var(--cyan);}
+  .draw-path{stroke-dasharray:600; stroke-dashoffset:600; animation:draw 2.4s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .hero-stats{display:flex; gap:0; margin-top:44px; border-top:1px solid var(--line); padding-top:22px; flex-wrap:wrap;}
+  .hero-stats .stat{flex:1; min-width:140px; padding-inline-end:22px;}
+  .hero-stats .stat b{display:block; font-family:var(--mono); font-size:24px; color:var(--cyan);}
+  .hero-stats .stat span{font-size:12.5px; color:var(--muted);}
+
+  /* ---------- SPEC TAG ---------- */
+  .spec-tag{
+    font-family:var(--mono); font-size:11px; color:var(--amber); border:1px solid rgba(255,180,84,.35);
+    padding:3px 8px; border-radius:20px; display:inline-block; margin-bottom:14px; letter-spacing:.02em;
+  }
+
+  /* ---------- HOME QUICK PILLARS ---------- */
+  .pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .pillar{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .pillar:hover{border-color:var(--cyan); transform:translateY(-4px);}
+  .pillar .icon{width:38px;height:38px; margin-bottom:16px;}
+  .pillar h3{font-size:17px; margin-bottom:8px;}
+  .pillar p{font-size:14px;}
+
+  /* ---------- CARDS GENERIC ---------- */
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .steps-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+  .card{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:28px;
+    position:relative;
+  }
+  .card:hover{border-color:rgba(79,209,232,.4);}
+  .card .icon{width:34px;height:34px; color:var(--cyan); margin-bottom:18px;}
+  .card h3{font-size:18px; margin-bottom:10px;}
+  .card p{font-size:14.5px;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start;}
+  .vmm{display:flex; flex-direction:column; gap:16px; margin-top:8px;}
+  .vmm .row{display:flex; gap:14px; border-bottom:1px solid var(--line); padding-bottom:16px;}
+  .vmm .row:last-child{border-bottom:0;}
+  .vmm .tag{font-family:var(--mono); font-size:11px; color:var(--muted); min-width:96px; padding-top:3px;}
+  .vmm .body h4{margin:0 0 6px; font-size:16px;}
+  .vmm .body p{font-size:14.5px;}
+  .about-copy p{font-size:15.5px; color:var(--text); opacity:.85; margin-bottom:16px;}
+  .whatwedo{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:26px;}
+  .whatwedo li{list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--muted);}
+  .whatwedo li::before{content:"◆"; color:var(--green); font-size:9px; margin-top:6px;}
+
+  /* ---------- WORKSHOPS ---------- */
+  .wgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .wcard{background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px; }
+  .wcard .top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;}
+  .wcard h3{font-size:15.5px;}
+  .wcard .meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;}
+  .meta span{font-family:var(--mono); font-size:10.5px; color:var(--muted); border:1px solid var(--line); padding:3px 8px; border-radius:14px;}
+
+  /* ---------- PROJECTS ---------- */
+  .tabs{display:flex; gap:10px; margin-bottom:32px;}
+  .tab-btn{
+    font-family:var(--mono); font-size:13px; padding:10px 18px; border-radius:7px; border:1px solid var(--line);
+    background:transparent; color:var(--muted); cursor:pointer;
+  }
+  .tab-btn.active{color:var(--bg); background:var(--cyan); border-color:var(--cyan);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .proj-card{background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+  .proj-card h3{font-size:17px; margin-bottom:10px;}
+  .proj-card p.desc{font-size:14.5px; margin-bottom:18px;}
+  .spec-table{display:grid; grid-template-columns:1fr 1fr; gap:10px 18px; border-top:1px solid var(--line); padding-top:16px;}
+  .spec-table .k{font-family:var(--mono); font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em;}
+  .spec-table .v{font-size:13.5px; color:var(--text); margin-top:3px;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-wrap{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:14px; padding:44px;
+    display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;
+  }
+  .exp-badge{font-family:var(--mono); font-size:12px; color:var(--green); border:1px solid rgba(111,227,154,.35); padding:4px 10px; border-radius:20px; display:inline-block; margin-bottom:16px;}
+  .exp-stats{display:flex; gap:28px; margin-top:26px; flex-wrap:wrap;}
+  .exp-stats .s b{display:block; font-family:var(--mono); font-size:26px; color:var(--amber);}
+  .exp-stats .s span{font-size:12px; color:var(--muted);}
+  .photo-grid{display:none !important;}
+  .photo-tile{
+    aspect-ratio:4/3; border-radius:8px; border:1px dashed var(--line);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:6px;
+    background:repeating-linear-gradient(135deg, rgba(79,209,232,.05) 0 10px, transparent 10px 20px);
+    color:var(--muted); font-family:var(--mono); font-size:11px; text-align:center; padding:10px;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px;}
+  .filter-btn{
+    font-family:var(--mono); font-size:12.5px; padding:8px 14px; border-radius:20px; border:1px solid var(--line);
+    background:transparent; color:var(--muted); cursor:pointer; transition:all .2s ease;
+  }
+  .filter-btn.active, .filter-btn:hover{color:var(--bg); background:var(--cyan); border-color:var(--cyan);}
+  .masonry{display:none !important;}
+  .g-tile{
+    break-inside:avoid; margin-bottom:14px; border-radius:10px; border:1px solid var(--line);
+    background:var(--bg-panel); overflow:hidden;
+  }
+  .g-tile .ph{
+    display:flex; align-items:center; justify-content:center; color:var(--cyan);
+    background:linear-gradient(160deg, rgba(79,209,232,.10), rgba(255,180,84,.06));
+  }
+  .g-tile .cap{padding:12px 14px; font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; align-items:center;}
+  .g-tile .cap b{color:var(--text); font-weight:500; font-size:13px;}
+  .g-tile .cap span{font-family:var(--mono); font-size:10px; color:var(--muted);}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:50px;}
+  .contact-info .row{display:flex; gap:14px; padding:18px 0; border-bottom:1px solid var(--line);}
+  .contact-info .row:first-child{padding-top:0;}
+  .contact-info .icon{width:20px; height:20px; color:var(--cyan); flex-shrink:0; margin-top:2px;}
+  .contact-info h4{font-size:13px; color:var(--muted); font-family:var(--mono); margin-bottom:4px; font-weight:400;}
+  .contact-info p{color:var(--text); font-size:15px;}
+  form.contact-form{display:flex; flex-direction:column; gap:16px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-bottom:7px; display:block;}
+  input, textarea, select{
+    width:100%; background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:13px 14px;
+    color:var(--text); font-family:var(--display); font-size:14.5px;
+  }
+  input:focus, textarea:focus, select:focus{outline:none; border-color:var(--cyan);}
+  textarea{resize:vertical; min-height:120px;}
+  .submit-btn{
+    background:var(--cyan); color:var(--bg); font-weight:700; border:0; padding:15px; border-radius:8px;
+    font-size:15px; cursor:pointer; align-self:flex-start; padding-inline:32px; font-family:var(--display);
+  }
+
+  footer{border-top:1px solid var(--line); padding:36px 0; margin-top:20px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  footer p{font-size:13px;}
+  .footer-links{display:flex; gap:18px;}
+  .footer-links a{font-size:13px; color:var(--muted); text-decoration:none;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  :focus-visible{outline:2px solid var(--cyan); outline-offset:2px;}
+
+  @media (max-width:980px){
+    nav.links, .navcta{display:none;}
+    .burger{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .schematic{height:300px; order:-1;}
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .steps-grid{grid-template-columns:repeat(2,1fr);}
+    .wgrid{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .exp-wrap, .contact-grid{grid-template-columns:1fr; gap:32px;}
+    .whatwedo{grid-template-columns:1fr;}
+    .tab-panel.active{grid-template-columns:1fr;}
+    .masonry{columns:2 160px;}
+  }
+  @media (max-width:560px){
+    .pillars, .grid-3, .wgrid, .steps-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .hero-stats .stat{flex:1 1 45%;}
+    .masonry{columns:1;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap navbar">
+    <a href="#home" class="brand">
+      <span class="chip">G</span>
+      GRAVITY <span class="tag">// ADVANCED TECHNOLOGIES</span>
+    </a>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#expertise">Our Expertise</a>
+      <a href="#workshops">Student Workshops</a>
+      <a href="#projects">Projects &amp; Programs</a>
+      <a href="#experience">Previous Experience</a>
+    </nav>
+    <a href="#contact" class="navcta">Contact Us</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="wrap" id="navMobile">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#expertise">Our Expertise</a>
+    <a href="#workshops">Student Workshops</a>
+    <a href="#projects">Projects &amp; Programs</a>
+    <a href="#experience">Previous Experience</a>
+    <a href="#gallery">Portfolio</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+</header>
+
+<!-- ===================== HOME ===================== -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">GRAVITY ADVANCED TECHNOLOGIES · أبوظبي</p>
+      <h1>من الفكرة إلى <em>نموذج فعلي</em> — تعلّم تقني قائم على البناء</h1>
+      <p class="lead">مؤسسة تقنية مقرها أبوظبي، متخصصة في الذكاء الاصطناعي، الروبوتات، البرمجيات، الأنظمة الذكية، والتصنيع الرقمي. نقدّم برامج وورش عمل عملية يبني فيها الطلاب نماذج أولية حقيقية، من الفكرة إلى العرض النهائي.</p>
+      <div class="hero-ctas">
+        <a href="#workshops" class="btn-primary">استكشف الورش التدريبية</a>
+        <a href="#projects" class="btn-ghost">تصفّح البرامج المقترحة</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>8</b><span>برامج تدريبية متخصصة</span></div>
+        <div class="stat"><b>5</b><span>مراحل منهجية من الفكرة للعرض</span></div>
+        
+      </div>
+    </div>
+
+    <div class="schematic reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 420">
+        <!-- drone body -->
+        <g stroke="var(--cyan)" fill="none" stroke-width="1.4">
+          <rect x="170" y="170" width="80" height="50" rx="6" class="draw-path"/>
+          <line x1="170" y1="180" x2="110" y2="120" class="draw-path"/>
+          <line x1="250" y1="180" x2="310" y2="120" class="draw-path"/>
+          <line x1="170" y1="210" x2="110" y2="270" class="draw-path"/>
+          <line x1="250" y1="210" x2="310" y2="270" class="draw-path"/>
+          <circle cx="110" cy="120" r="26" class="draw-path"/>
+          <circle cx="310" cy="120" r="26" class="draw-path"/>
+          <circle cx="110" cy="270" r="26" class="draw-path"/>
+          <circle cx="310" cy="270" r="26" class="draw-path"/>
+        </g>
+        <!-- leader lines + labels -->
+        <g class="leader-line">
+          <line x1="250" y1="185" x2="330" y2="185"/>
+          <line x1="170" y1="190" x2="70" y2="190"/>
+          <line x1="205" y1="220" x2="205" y2="320"/>
+          <line x1="110" y1="120" x2="40" y2="70"/>
+        </g>
+        <g class="leader-dot">
+          <circle cx="250" cy="185" r="2.6"/>
+          <circle cx="170" cy="190" r="2.6"/>
+          <circle cx="205" cy="220" r="2.6"/>
+          <circle cx="110" cy="120" r="2.6"/>
+        </g>
+        <g class="leader-label">
+          <text x="335" y="188">وحدة التحكّم</text>
+          <text x="18" y="193" text-anchor="end">حساس الطيران</text>
+          <text x="205" y="335" text-anchor="middle">بطارية LiPo</text>
+          <text x="38" y="62" text-anchor="middle">محرك بدون فرش</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="pillars">
+      <div class="pillar reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        <h3>AI &amp; Robotics</h3>
+        <p>من الخوارزميات إلى الأذرع الآلية — نبني فهمًا عمليًا للذكاء الاصطناعي والروبوتات عبر مشاريع تطبيقية.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M12 2l3 6 6 .9-4.5 4.2 1 6-5.5-3-5.5 3 1-6L3 8.9 9 8z"/></svg>
+        <h3>Innovation &amp; STEM</h3>
+        <p>منهجية تعلّم قائمة على حل المشكلات، تدمج العلوم والتقنية والهندسة والرياضيات في تجربة واحدة متكاملة.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <h3>Student Workshops</h3>
+        <p>ورش مكثّفة ومعسكرات صيفية للفئات العمرية المختلفة، بإشراف مدربين متخصصين ومخرجات ملموسة لكل مشارك.</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <h3>صور ومشاريع</h3>
+        <p>لمحة من أعمال طلابنا ومشاريعهم المُنجزة — من الروبوتات إلى الطائرات المسيّرة والنماذج المطبوعة ثلاثيًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p class="eyebrow">من نحن</p>
+        <h2>مؤسسة تقنية من أبوظبي، قائمة على الابتكار العملي</h2>
+        <p style="margin-top:20px;">GRAVITY ADVANCED TECHNOLOGIES – L.L.C – S.P.C مؤسسة تقنية مقرها أبوظبي، تركّز على الابتكار العملي، الذكاء الاصطناعي، الروبوتات، تطوير البرمجيات، الأنظمة الذكية، والتصنيع الرقمي. نهدف لتقديم تجارب تعلّم عملية تساعد الطلاب على تحويل أفكارهم إلى نماذج أولية فعلية عبر ورش عمل وتحديات وبرامج موجّهة.</p>
+        <p>تُبنى برامجنا التدريبية على العمل الجماعي: يتعلّم الطلاب بالممارسة، يبنون حلولهم، يختبرونها، يوثّقون عملهم، ثم يعرضون نتيجة نهائية ملموسة.</p>
+        <ul class="whatwedo">
+          <li>أبحاث واستشارات الابتكار والذكاء الاصطناعي</li>
+          <li>تصميم أنظمة الحاسوب والبرمجيات</li>
+          <li>خدمات الطباعة ثلاثية الأبعاد (متعددة الأبعاد)</li>
+          <li>تشغيل وإدارة الأنظمة الروبوتية الذكية</li>
+        </ul>
+      </div>
+      <div class="vmm reveal">
+        <div class="row">
+          <div class="tag">// VISION</div>
+          <div class="body"><h4>رؤيتنا</h4><p>أن نكون جهة رائدة في أبوظبي لتقديم تعلّم تقني عملي يُخرّج مبتكرين قادرين على تحويل الأفكار إلى حلول حقيقية.</p></div>
+        </div>
+        <div class="row">
+          <div class="tag">// MISSION</div>
+          <div class="body"><h4>رسالتنا</h4><p>توفير تجارب تعلّم عملية قائمة على المشاريع في الذكاء الاصطناعي، الروبوتات، البرمجة، والتصنيع الرقمي.</p></div>
+        </div>
+        <div class="row">
+          <div class="tag">// APPROACH</div>
+          <div class="body"><h4>What We Do</h4><p>نصمم برامجنا حول دورة كاملة: التعريف بالتحدي، التعلّم بالممارسة، العمل الجماعي، الإرشاد والاختبار، ثم العرض النهائي.</p></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERTISE ===================== -->
+<section class="section" id="expertise" style="background:var(--bg-panel);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our Expertise</p>
+      <h2>ست مسارات تقنية، منهجية واحدة قائمة على البناء</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <span class="spec-tag">[ AI · 01 ]</span>
+        <h3>Artificial Intelligence</h3>
+        <p>أبحاث واستشارات الابتكار والذكاء الاصطناعي، وخدمات تطوير حلول الذكاء الاصطناعي.</p>
+      </div>
+      <div class="card reveal">
+        <span class="spec-tag">[ ROB · 02 ]</span>
+        <h3>Robotics</h3>
+        <p>تشغيل وإدارة الأنظمة الروبوتية الذكية، والتجارة بالجملة في روبوتات الذكاء الاصطناعي.</p>
+      </div>
+      <div class="card reveal">
+        <span class="spec-tag">[ DEV · 03 ]</span>
+        <h3>Coding &amp; Software</h3>
+        <p>تصميم أنظمة الحاسوب والبرمجيات، وتطوير وابتكار البرامج والأنظمة الحاسوبية.</p>
+      </div>
+      <div class="card reveal">
+        <span class="spec-tag">[ IOT · 04 ]</span>
+        <h3>Smart Systems &amp; IoT</h3>
+        <p>مسار تدريبي يقدَّم ضمن ورشنا يغطّي الأنظمة الذكية المتصلة والأتمتة البسيطة.</p>
+      </div>
+      <div class="card reveal">
+        <span class="spec-tag">[ 3DP · 05 ]</span>
+        <h3>3D Design &amp; Printing</h3>
+        <p>خدمات الطباعة متعددة الأبعاد، والتجارة بالجملة في أجهزة الطباعة ثلاثية الأبعاد.</p>
+      </div>
+      <div class="card reveal">
+        <span class="spec-tag">[ CNS · 06 ]</span>
+        <h3>Technical Consulting</h3>
+        <p>استشارات المعدات التقنية، بالإضافة إلى التجارة الإلكترونية عبر المواقع ومنصات التواصل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORKSHOPS ===================== -->
+<section class="section" id="workshops">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Student Workshops</p>
+      <h2>ورش مصمّمة حسب العمر والمستوى</h2>
+      <p>كل ورشة تنتهي بنموذج أولي ملموس وعرض نهائي — لا عروض تقديمية فقط.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wcard reveal"><div class="top"><h3>AI &amp; Robotics Innovation Workshop</h3></div><p style="font-size:13.5px;">تعريف بالذكاء الاصطناعي والروبوتات والمستشعرات عبر مشروع بناء موجّه.</p><div class="meta"><span>3 أيام</span><span>روبوت + عرض</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>Build Your Own AI Project</h3></div><p style="font-size:13.5px;">من مشكلة واقعية إلى نموذج ذكاء اصطناعي أولي باستخدام أدوات وبيانات ميسّرة.</p><div class="meta"><span>2 أيام</span><span>نموذج AI + عرض</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>Robotics Challenge</h3></div><p style="font-size:13.5px;">تحدٍّ جماعي لتصميم وبرمجة روبوت لإنجاز مهام محددة.</p><div class="meta"><span>3 أيام</span><span>روبوت تنافسي + تقرير</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>3D Design &amp; Printing Workshop</h3></div><p style="font-size:13.5px;">تصميم قطعة رقميًا وتجهيزها للطباعة وإنتاج نموذج فعلي.</p><div class="meta"><span>1 يوم</span><span>نموذج مطبوع</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>Smart Systems &amp; IoT Workshop</h3></div><p style="font-size:13.5px;">مقدمة عملية للأجهزة المتصلة عبر مشروع بيئة ذكية مصغّرة.</p><div class="meta"><span>2 أيام</span><span>نموذج ذكي + عرض</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>Coding &amp; Software Development Workshop</h3></div><p style="font-size:13.5px;">أساسيات البرمجة عبر بناء تطبيق أو مشروع تفاعلي فعلي.</p><div class="meta"><span>2 أيام</span><span>برنامج فعّال</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>Future Innovators Program</h3></div><p style="font-size:13.5px;">رحلة ابتكار متكاملة من تحديد المشكلة إلى التصميم والنموذج والعرض.</p><div class="meta"><span>5 أيام</span><span>مشروع كامل + عرض</span></div></div>
+      <div class="wcard reveal"><div class="top"><h3>AI Innovation Challenge</h3></div><p style="font-size:13.5px;">تحدٍّ جماعي لتطوير حلول ذكاء اصطناعي عملية للتعليم أو الاستدامة أو المجتمع.</p><div class="meta"><span>4 أيام</span><span>نموذج حل + عرض ختامي</span></div></div>
+      <div class="wcard reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <p style="font-size:13.5px; margin-bottom:14px;">هل تبحث عن برنامج مخصص لمدرستك؟</p>
+        <a href="#contact" class="btn-ghost" style="font-size:13px; padding:10px 18px;">تواصل معنا</a>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;">
+      <p class="eyebrow">منهجية التنفيذ</p>
+      <h2 style="font-size:24px; margin-bottom:28px;">خمس خطوات من التعريف إلى العرض النهائي</h2>
+      <div class="steps-grid">
+        <div class="card reveal" style="padding:20px;"><span class="spec-tag">01</span><h3 style="font-size:14.5px;">Briefing &amp; Inspiration</h3><p style="font-size:12.5px;">تقديم التحدي والأهداف وتطبيقاته الواقعية.</p></div>
+        <div class="card reveal" style="padding:20px;"><span class="spec-tag">02</span><h3 style="font-size:14.5px;">Learning by Doing</h3><p style="font-size:12.5px;">شرح تقني مختصر متبوع بأنشطة تطبيقية موجّهة.</p></div>
+        <div class="card reveal" style="padding:20px;"><span class="spec-tag">03</span><h3 style="font-size:14.5px;">Team Project Work</h3><p style="font-size:12.5px;">عمل فردي أو جماعي لبناء الحل ضمن فرق صغيرة.</p></div>
+        <div class="card reveal" style="padding:20px;"><span class="spec-tag">04</span><h3 style="font-size:14.5px;">Mentoring &amp; Testing</h3><p style="font-size:12.5px;">دعم المدربين لاستكشاف الأخطاء والتحسين المستمر.</p></div>
+        <div class="card reveal" style="padding:20px;"><span class="spec-tag">05</span><h3 style="font-size:14.5px;">Final Demonstration</h3><p style="font-size:12.5px;">عرض كل فريق لحله النهائي واستقبال الملاحظات.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS & PROGRAMS ===================== -->
+<section class="section" id="projects" style="background:var(--bg-panel);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Projects &amp; Programs</p>
+      <h2>برامج مُنجزة وأخرى قيد الإطلاق</h2>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="curr">Current / Proposed Programs</button>
+      <button class="tab-btn" data-tab="prev">Previous Experience</button>
+    </div>
+
+    <div class="tab-panel active" id="curr">
+      <div class="proj-card reveal">
+        <h3>Future Innovators Program</h3>
+        <p class="desc">رحلة ابتكار متكاملة تأخذ الطلاب من تحديد المشكلة، عبر التصميم والنموذج الأولي، وصولًا للعرض النهائي.</p>
+        <div class="spec-table">
+          <div><div class="k">المدة</div><div class="v">5 أيام (برنامج ابتكار كامل)</div></div>
+          <div><div class="k">مجالات التعلّم</div><div class="v">الابتكار، التفكير التصميمي، بناء النماذج</div></div>
+          <div><div class="k">المخرجات</div><div class="v">مشروع طالب كامل + عرض تقديمي</div></div>
+          <div><div class="k">الحالة</div><div class="v" style="color:var(--amber);">مقترح</div></div>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <h3>AI Innovation Challenge</h3>
+        <p class="desc">تحدٍّ جماعي مُيسَّر تطوّر فيه الفرق حلول ذكاء اصطناعي عملية للتعليم أو الاستدامة أو المجتمع.</p>
+        <div class="spec-table">
+          <div><div class="k">المدة</div><div class="v">4 أيام (سباق ابتكار)</div></div>
+          <div><div class="k">مجالات التعلّم</div><div class="v">البحث، توليد الأفكار، تصميم حلول AI</div></div>
+          <div><div class="k">المخرجات</div><div class="v">نموذج حل + عرض ختامي</div></div>
+          <div><div class="k">الحالة</div><div class="v" style="color:var(--amber);">مقترح</div></div>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <h3>Robotics Challenge</h3>
+        <p class="desc">تحدٍّ جماعي يصمّم فيه الطلاب ويبرمجون روبوتًا لإنجاز مهام محددة ضمن منافسة فرق.</p>
+        <div class="spec-table">
+          <div><div class="k">المدة</div><div class="v">3 أيام (تصميم → بناء → اختبار)</div></div>
+          <div><div class="k">مجالات التعلّم</div><div class="v">التصميم الميكانيكي، البرمجة، الاختبار</div></div>
+          <div><div class="k">المخرجات</div><div class="v">روبوت جاهز للمنافسة + تقرير تحدٍّ</div></div>
+          <div><div class="k">الحالة</div><div class="v" style="color:var(--amber);">مقترح</div></div>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <h3>Smart Systems &amp; IoT Workshop</h3>
+        <p class="desc">مقدمة عملية للأجهزة المتصلة والأنظمة الذكية عبر بناء مشروع بيئة ذكية مصغّرة.</p>
+        <div class="spec-table">
+          <div><div class="k">المدة</div><div class="v">2 أيام (تعلّم + بناء)</div></div>
+          <div><div class="k">مجالات التعلّم</div><div class="v">المستشعرات، منطق إنترنت الأشياء، الأتمتة</div></div>
+          <div><div class="k">المخرجات</div><div class="v">نموذج نظام ذكي + عرض تجريبي</div></div>
+          <div><div class="k">الحالة</div><div class="v" style="color:var(--amber);">مقترح</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="prev">
+      <div class="proj-card reveal">
+        <h3>Drones Camp 2019</h3>
+        <p class="desc">خبرة ميدانية سابقة لفريق المؤسسة في تدريب الطلاب على أساسيات الطائرات بدون طيار قبل التأسيس الرسمي للمؤسسة.</p>
+        <div class="spec-table">
+          <div><div class="k">المدة</div><div class="v">قيد التوثيق</div></div>
+          <div><div class="k">المحتوى</div><div class="v">تجميع وتشغيل طائرات بدون طيار</div></div>
+          <div><div class="k">المخرجات</div><div class="v">قيد التوثيق</div></div>
+          <div><div class="k">الحالة</div><div class="v" style="color:var(--muted);">تفاصيل إضافية قيد الإعداد</div></div>
+        </div>
+      </div>
+      <div class="proj-card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:12px;">
+        <h3 style="font-size:16px;">لديك مشاريع سابقة موثّقة؟</h3>
+        <p class="desc" style="margin-bottom:0;">زوّدنا بالتفاصيل والصور والأرقام الدقيقة لأي برنامج سابق لإضافته هنا بشكل رسمي وموثّق.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREVIOUS EXPERIENCE ===================== -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Previous Experience</p>
+      <h2>خبرة ميدانية سابقة لفريق المؤسسة</h2>
+    </div>
+    <div class="exp-wrap reveal">
+      <div>
+        <span class="exp-badge" style="color:var(--amber); border-color:rgba(255,180,84,.35);">● قيد التوثيق</span>
+        <h3 style="font-size:24px; margin-bottom:14px;">Drones Camp 2019</h3>
+        <p style="font-size:15px;">تجربة ميدانية سابقة لفريق العمل في تدريب الطلاب على أساسيات الطائرات بدون طيار، سبقت التأسيس الرسمي لمؤسسة GRAVITY ADVANCED TECHNOLOGIES. التفاصيل والأرقام الدقيقة والصور الموثّقة قيد التجميع وسيتم تحديث هذا القسم بها.</p>
+        <div class="exp-stats">
+          <div class="s"><b>2019</b><span>سنة تنفيذ المعسكر</span></div>
+          <div class="s"><b>2026</b><span>سنة التأسيس الرسمي للمؤسسة</span></div>
+        </div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-tile">📷<span>صورة المعسكر — قريبًا</span></div>
+        <div class="photo-tile">📷<span>تجميع الطائرات</span></div>
+        <div class="photo-tile">📷<span>جلسة التحليق</span></div>
+        <div class="photo-tile">📷<span>حفل الختام</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO / GALLERY ===================== -->
+<section class="section" id="gallery" style="background:var(--bg-panel); display:none !important;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Portfolio / Gallery</p>
+      <h2>لمحة من أعمال طلابنا</h2>
+    </div>
+    <div class="filters" id="filterBar">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="students">صور الطلبة</button>
+      <button class="filter-btn" data-filter="workshops">الورش</button>
+      <button class="filter-btn" data-filter="projects">المشاريع</button>
+      <button class="filter-btn" data-filter="robots">الروبوتات</button>
+      <button class="filter-btn" data-filter="drones">الطائرات</button>
+      <button class="filter-btn" data-filter="3d">3D Printing</button>
+      <button class="filter-btn" data-filter="electronics">Electronics</button>
+    </div>
+    <div class="masonry" id="masonryGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Contact Us</p>
+      <h2>لنبنِ برنامجك التقني القادم معًا</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><h4>EMAIL</h4><p>gravity.tech511@gmail.com</p></div>
+        </div>
+        <div class="row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2.1z"/></svg>
+          <div><h4>PHONE</h4><p dir="ltr" style="text-align:right;">+971 52 777 7255</p></div>
+        </div>
+        <div class="row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><h4>LOCATION</h4><p>أبوظبي، الإمارات العربية المتحدة</p></div>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="event.preventDefault(); this.reset(); document.getElementById('formMsg').style.display='block';">
+        <div class="form-row">
+          <div><label>الاسم الكامل</label><input type="text" required placeholder="اكتب اسمك"></div>
+          <div><label>البريد الإلكتروني</label><input type="email" required placeholder="you@example.com"></div>
+        </div>
+        <div class="form-row">
+          <div><label>رقم الهاتف</label><input type="tel" placeholder="+971 ..."></div>
+          <div><label>الموضوع</label>
+            <select>
+              <option>استفسار عن ورشة عمل</option>
+              <option>برنامج مدرسي</option>
+              <option>شراكة أو رعاية</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+        </div>
+        <div><label>الرسالة</label><textarea required placeholder="أخبرنا كيف يمكننا مساعدتك"></textarea></div>
+        <button class="submit-btn" type="submit">إرسال الرسالة</button>
+        <p id="formMsg" style="display:none; color:var(--green); font-size:13.5px;">تم استلام رسالتك — سنعاود التواصل معك قريبًا.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 GRAVITY ADVANCED TECHNOLOGIES – L.L.C – S.P.C · أبوظبي، الإمارات العربية المتحدة ·</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const navMobile = document.getElementById('navMobile');
+  burger.addEventListener('click', () => navMobile.classList.toggle('open'));
+  navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMobile.classList.remove('open')));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // gallery data + filters
+  const items = [
+    {cat:'students', label:'يوم افتتاح المعسكر', tag:'STUDENTS'},
+    {cat:'workshops', label:'ورشة البرمجة', tag:'WORKSHOP'},
+    {cat:'robots', label:'روبوت المتاهة', tag:'ROBOT'},
+    {cat:'drones', label:'تحليق تجريبي', tag:'DRONE'},
+    {cat:'3d', label:'نموذج مطبوع', tag:'3D PRINT'},
+    {cat:'electronics', label:'لوحة دارات', tag:'CIRCUIT'},
+    {cat:'projects', label:'مشروع تخرّج', tag:'PROJECT'},
+    {cat:'students', label:'عمل جماعي', tag:'STUDENTS'},
+    {cat:'robots', label:'ذراع آلية', tag:'ROBOT'},
+    {cat:'drones', label:'تجميع الطائرة', tag:'DRONE'},
+    {cat:'workshops', label:'ورشة الإلكترونيات', tag:'WORKSHOP'},
+    {cat:'3d', label:'تصميم ثلاثي الأبعاد', tag:'3D PRINT'},
+  ];
+  const heights = [170,210,150,230,180,200,160,220,190,175,205,165];
+  const grid = document.getElementById('masonryGrid');
+  function renderGallery(filter){
+    grid.innerHTML = '';
+    items.filter(i => filter === 'all' || i.cat === filter).forEach((i, idx) => {
+      const tile = document.createElement('div');
+      tile.className = 'g-tile';
+      tile.innerHTML = `<div class="ph" style="height:${heights[idx % heights.length]}px;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="cap"><b>${i.label}</b><span>${i.tag}</span></div>`;
+      grid.appendChild(tile);
+    });
+  }
+  renderGallery('all');
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGallery(btn.dataset.filter);
+    });
+  });
+</script>
+</body>
+</html>
