@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=DrY1HHL_qUDoXB6PAH5SgkweiU1P7CeFx38bcvXmgiK_nFDfU2NoyWFk7fcQ1W3SXm7bXWw0rc3UaVmFQJJ9aCrtD_2B11_DPIR2_JM1ts3u0lL-ATEg_AhnPB1a4Pc68GqYqRGeFT27i_DsHD7mi-g6oCLUI-bZRLnBg4MuIyocz-2z4NEn8LWGTCLZQiIR4y-Hz77ofmXXY0pZaPDSECYcarSDTe7UsH7pgmnRNkA6CiqTzURbonaZWXTaJUkIHC9l6z5aXYPUDzyPgzlQhY5WFKH9-JeFdImyJ5hyRSGNITKH336Rt1KxH5tFT5RR" charset="UTF-8"></script><style>
   :root{
     --bg:#0A1420;
     --bg-panel:#0E1D2E;
@@ -203,7 +203,7 @@
   .exp-stats{display:flex; gap:28px; margin-top:26px; flex-wrap:wrap;}
   .exp-stats .s b{display:block; font-family:var(--mono); font-size:26px; color:var(--amber);}
   .exp-stats .s span{font-size:12px; color:var(--muted);}
-  .photo-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  .photo-grid{display:none !important;}
   .photo-tile{
     aspect-ratio:4/3; border-radius:8px; border:1px dashed var(--line);
     display:flex; align-items:center; justify-content:center; flex-direction:column; gap:6px;
@@ -218,7 +218,7 @@
     background:transparent; color:var(--muted); cursor:pointer; transition:all .2s ease;
   }
   .filter-btn.active, .filter-btn:hover{color:var(--bg); background:var(--cyan); border-color:var(--cyan);}
-  .masonry{columns:4 220px; column-gap:14px;}
+  .masonry{display:none !important;}
   .g-tile{
     break-inside:avoid; margin-bottom:14px; border-radius:10px; border:1px solid var(--line);
     background:var(--bg-panel); overflow:hidden;
@@ -300,7 +300,6 @@
       <a href="#workshops">Student Workshops</a>
       <a href="#projects">Projects &amp; Programs</a>
       <a href="#experience">Previous Experience</a>
-      <a href="#gallery">Portfolio</a>
     </nav>
     <a href="#contact" class="navcta">Contact Us</a>
     <button class="burger" id="burgerBtn" aria-label="Open menu">
@@ -618,7 +617,7 @@
 </section>
 
 <!-- ===================== PORTFOLIO / GALLERY ===================== -->
-<section class="section" id="gallery" style="background:var(--bg-panel);">
+<section class="section" id="gallery" style="background:var(--bg-panel); display:none !important;">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Portfolio / Gallery</p>
@@ -690,7 +689,6 @@
     <div class="footer-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
